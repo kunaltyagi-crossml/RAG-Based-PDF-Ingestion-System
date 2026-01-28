@@ -89,8 +89,6 @@ Create a file named `.env` in the root directory of this project and add your AP
 GOOGLE_API_KEY=your_google_api_key_here
 ```
 
-**Get your Google AI API key:** [https://makersuite.google.com/app/apikey](https://makersuite.google.com/app/apikey)
-
 ---
 
 ## 📖 Usage
@@ -128,24 +126,6 @@ The app will open in your browser at `http://localhost:8501`
 ❌ "Tell me about quantum physics"
 ❌ "What's the weather today?"
 ❌ "Recommend similar papers"
-```
-
-### 2. Testing & Examples
-
-**Run Setup Verification:**
-```bash
-python test_setup.py
-```
-
-**Run Example Scripts:**
-```bash
-# Run all examples
-python examples.py
-
-# Run specific example (1-9)
-python examples.py 1  # Basic RAG
-python examples.py 2  # Conversational RAG
-python examples.py 3  # Document Summarization
 ```
 
 The examples are invoked automatically and demonstrate:
@@ -290,34 +270,15 @@ tiktoken>=0.5.2                     # Token management
 
 ## 🚀 Future Enhancements
 
-### Version 2.1 (Next Release)
 - [ ] **Multiple PDF Support** - Upload and query across multiple documents
 - [ ] **Export Functionality** - Download chat history as PDF/JSON/CSV
 - [ ] **Custom Prompts UI** - Edit system prompts in the interface
 - [ ] **PDF Highlighting** - Visual highlighting of source sections
 - [ ] **Conversation Persistence** - Save and load chat sessions
-
-### Version 2.5 (Medium-term)
 - [ ] **OCR Integration** - Process scanned PDFs with text recognition
 - [ ] **Multi-format Support** - DOCX, TXT, HTML, Markdown files
 - [ ] **Advanced Search** - Hybrid keyword + semantic search
 - [ ] **Batch Processing** - Process multiple files simultaneously
 - [ ] **REST API** - Programmatic access for integrations
 
-### Version 3.0 (Long-term Vision)
-- [ ] **Multi-language Support** - Support 20+ languages
-- [ ] **Voice Interface** - Voice input and audio responses
-- [ ] **Mobile App** - Native iOS and Android applications
-- [ ] **Cloud Deployment** - Hosted version with user accounts
-- [ ] **Collaboration Features** - Share documents and conversations
-- [ ] **Advanced RAG Techniques** - HyDE, RAPTOR, multi-hop reasoning
-- [ ] **Image Analysis** - OCR + Vision models for charts/diagrams
-- [ ] **Custom Model Support** - Llama, Claude, GPT-4, and more
-
-### Experimental Features (Research)
-- [ ] **Real-time Collaboration** - Multiple users analyzing one document
-- [ ] **Smart Annotations** - AI-powered document highlighting
-- [ ] **Knowledge Graphs** - Visual relationship mapping from documents
-- [ ] **Auto-summarization** - Generate executive summaries automatically
-- [ ] **Citation Generator** - Academic citation formatting
-- [ ] **Fact Verification** - Cross-reference with external sources
+#
