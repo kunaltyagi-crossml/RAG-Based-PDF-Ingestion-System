@@ -54,7 +54,7 @@ The system is organized around **4 core functionalities**:
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/kunaltyagi-crossml/RAG-Based-PDF-Ingestion-System.git
 cd RAG_BASED_CHATBOT
 ```
 
