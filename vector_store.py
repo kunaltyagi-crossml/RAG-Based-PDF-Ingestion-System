@@ -1,38 +1,17 @@
 import os
-import faiss
 from langchain_community.vectorstores import FAISS
-from langchain_community.docstore.in_memory import InMemoryDocstore
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from cred import GOOGLE_API_KEY
 from log_config import get_logger
+from client import get_embeddings
 
 logger = get_logger(__name__)
 
 FAISS_PATH = "faiss_index"
 
 
-def get_embeddings():
-    """
-    Initialize and return Google Generative AI embeddings.
-    
-    Returns:
-        GoogleGenerativeAIEmbeddings instance
-    """
-    try:
-        logger.info("Initializing Google Generative AI embeddings")
-        embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/embedding-001",
-            google_api_key=GOOGLE_API_KEY
-        )
-        return embeddings
-    except Exception as e:
-        logger.error(f"Error initializing embeddings: {str(e)}", exc_info=True)
-        raise
-
-
 def create_vector_store(chunks):
     """
-    Create a FAISS vector store from document chunks using latest LangChain syntax.
+    Create a FAISS vector store from document chunks.
     
     Args:
         chunks: List of document chunks
@@ -44,24 +23,10 @@ def create_vector_store(chunks):
         logger.info(f"Creating vector store from {len(chunks)} chunks")
         embeddings = get_embeddings()
         
-        # Get embedding dimension
-        embedding_dim = len(embeddings.embed_query("hello world"))
-        logger.info(f"Embedding dimension: {embedding_dim}")
-        
-        # Create FAISS index
-        index = faiss.IndexFlatL2(embedding_dim)
-        
-        # Initialize FAISS vector store with new syntax
-        vector_db = FAISS(
-            embedding_function=embeddings,
-            index=index,
-            docstore=InMemoryDocstore(),
-            index_to_docstore_id={},
+        vector_db = FAISS.from_documents(
+            documents=chunks,
+            embedding=embeddings
         )
-        
-        # Add documents to the vector store
-        vector_db.add_documents(chunks)
-        logger.info(f"Added {len(chunks)} documents to vector store")
         
         # Save the vector store locally
         vector_db.save_local(FAISS_PATH)

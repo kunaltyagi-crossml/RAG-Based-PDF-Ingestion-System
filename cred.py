@@ -8,7 +8,7 @@ logger = get_logger(__name__)
 load_dotenv()
 
 # Get API keys
-GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")  # ✅ Fixed
 
 # Validate API keys
 if not GOOGLE_API_KEY:

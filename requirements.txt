@@ -1,10 +1,17 @@
-langchain>=0.1.0                    # LLM framework
-langchain-community>=0.0.20         # Community tools
-langchain-google-genai>=0.0.6       # Google AI integration
-langchain-core>=0.1.0               # Core components
-langchain-text-splitters>=0.0.1     # Text processing
-faiss-cpu>=1.7.4                    # Vector search
-pypdf>=3.17.0                       # PDF parsing
-streamlit>=1.29.0                   # Web interface
-python-dotenv>=1.0.0                # Environment config
-tiktoken>=0.5.2                     # Token management
+streamlit==1.29.0
+
+langchain==1.2.7
+langchain-core==1.2.7
+langchain-community==0.4.1
+langchain-text-splitters==1.1.0
+
+langchain-google-genai==4.2.0
+google-generativeai==0.3.2
+
+faiss-cpu==1.7.4
+
+pypdf==3.17.4
+
+python-dotenv==1.0.0
+
+tiktoken==0.5.2
